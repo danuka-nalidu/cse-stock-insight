@@ -7,7 +7,7 @@ const slides = [
   { title: "Proposal Presentation", date: "August 2024", status: "Available", color: "emerald", fileUrl: "/Proposal presentation.pptx", preview: "/preview-proposal.png" },
   { title: "Progress Presentation 1", date: "December 2024", status: "Available", color: "emerald", fileUrl: "/Progress presentation 1.pptx", preview: "/preview-progress-1.png" },
   { title: "Progress Presentation 2", date: "April 2025", status: "Available", color: "cyan", fileUrl: "/Progress presentaion 2.pptx", preview: "/preview-progress-2.png" },
-  { title: "Final Presentation", date: "August 2025", status: "Coming Soon", color: "muted" },
+  { title: "Final Presentation", date: "August 2025", status: "Available", color: "emerald", fileUrl: "/Proposal presentation.pptx", preview: "/finalP.png" }
 ];
 
 const Presentations = () => {

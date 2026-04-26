@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, Award } from "lucide-react";
 
 const members = [
   {
-    name: "Member One",
+    name: "Dushan Waranakulasooriya",
     role: "Open Price Prediction",
     id: "IT22306654",
     email: "it22306654@my.sliit.lk",
@@ -11,7 +11,7 @@ const members = [
     initials: "M1",
   },
   {
-    name: "Member Two",
+    name: "Banuka wahalathanthri",
     role: "Dividend Forecasting",
     id: "IT22102614",
     email: "it22102614@my.sliit.lk",
@@ -19,7 +19,7 @@ const members = [
     initials: "M2",
   },
   {
-    name: "Member Three",
+    name: "Madhawa Awishka",
     role: "Risk Assessment",
     id: "IT22271532",
     email: "it22271532@my.sliit.lk",
@@ -27,7 +27,7 @@ const members = [
     initials: "M3",
   },
   {
-    name: "Member Four",
+    name: "Danuka Nalindu",
     role: "Sentiment Analysis module",
     id: "IT22069672",
     email: "it22069672@my.sliit.lk",
