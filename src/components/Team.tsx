@@ -4,41 +4,41 @@ import { Mail, Github, Linkedin, Award } from "lucide-react";
 const members = [
   {
     name: "Member One",
-    role: "Team Lead · Price Prediction",
-    id: "IT21XXXXXX",
-    email: "it21xxxxxx@my.sliit.lk",
-    achievement: "Designed the LSTM-based forecasting engine.",
+    role: "Open Price Prediction",
+    id: "IT22306654",
+    email: "it22306654@my.sliit.lk",
+    achievement: "Designed the Ensemble open price forecasting engine",
     initials: "M1",
   },
   {
     name: "Member Two",
     role: "Dividend Forecasting",
-    id: "IT21XXXXXX",
-    email: "it21xxxxxx@my.sliit.lk",
-    achievement: "Built dividend prediction & sector analytics module.",
+    id: "IT22102614",
+    email: "it22102614@my.sliit.lk",
+    achievement: "Built dividend prediction & sector analytics module",
     initials: "M2",
   },
   {
     name: "Member Three",
     role: "Risk Assessment",
-    id: "IT21XXXXXX",
-    email: "it21xxxxxx@my.sliit.lk",
-    achievement: "Implemented VaR, CVaR & Monte-Carlo risk engine.",
+    id: "IT22271532",
+    email: "it22271532@my.sliit.lk",
+    achievement: "Built the risk prediction module",
     initials: "M3",
   },
   {
     name: "Member Four",
-    role: "Portfolio Optimisation",
-    id: "IT21XXXXXX",
-    email: "it21xxxxxx@my.sliit.lk",
-    achievement: "Developed RL-based portfolio allocation agent.",
+    role: "Sentiment Analysis module",
+    id: "IT22069672",
+    email: "it22069672@my.sliit.lk",
+    achievement: "Developed Sentiment Analysis module for market insights",
     initials: "M4",
   },
 ];
 
 const supervisors = [
-  { name: "Supervisor Name", role: "Supervisor", email: "supervisor@sliit.lk" },
-  { name: "Co-Supervisor Name", role: "Co-Supervisor", email: "cosupervisor@sliit.lk" },
+  { name: "Dr. Kalpani Manathunga", role: "Supervisor", email: "kalpani.m@sliit.lk" },
+  { name: "Ms. Suriyaa Kumari", role: "Co-Supervisor", email: "suriyaa.k@sliit.lk" },
 ];
 
 const Team = () => {
