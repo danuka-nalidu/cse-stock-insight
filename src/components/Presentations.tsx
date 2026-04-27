@@ -3,11 +3,50 @@ import { Presentation, ExternalLink, Download, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+const proposalPdf = new URL("../slides/Proposal presentation.pdf", import.meta.url).href;
+const progress2Pptx = new URL("../slides/Progress presentaion 2.pdf", import.meta.url).href;
+
 const slides = [
-  { title: "Proposal Presentation", date: "August 2024", status: "Available", color: "emerald", fileUrl: "/Proposal presentation.pptx", preview: "/preview-proposal.png" },
-  { title: "Progress Presentation 1", date: "December 2024", status: "Available", color: "emerald", fileUrl: "/Progress presentation 1.pptx", preview: "/preview-progress-1.png" },
-  { title: "Progress Presentation 2", date: "April 2025", status: "Available", color: "cyan", fileUrl: "/Progress presentaion 2.pptx", preview: "/preview-progress-2.png" },
-  { title: "Final Presentation", date: "August 2025", status: "Available", color: "emerald", fileUrl: "/Proposal presentation.pptx", preview: "/finalP.png" }
+  {
+    title: "Proposal Presentation",
+    date: "August 2024",
+    status: "Available",
+    color: "emerald",
+    fileUrl: "/Proposal presentation.pptx",
+    openUrl: proposalPdf,
+    preview: "/preview-proposal.png",
+    filePath: "src/slides/Proposal presentation.pdf"
+  },
+  {
+    title: "Progress Presentation 1",
+    date: "December 2024",
+    status: "Available",
+    color: "emerald",
+    fileUrl: "/Progress presentation 1.pptx",
+    openUrl: "",
+    preview: "/preview-progress-1.png",
+    filePath: "Not uploaded yet"
+  },
+  {
+    title: "Progress Presentation 2",
+    date: "April 2025",
+    status: "Available",
+    color: "cyan",
+    fileUrl: "/Progress presentaion 2.pdf",
+    openUrl: progress2Pptx,
+    preview: "/preview-progress-2.png",
+    filePath: "src/slides/Progress presentaion 2.pdf"
+  },
+  {
+    title: "Final Presentation",
+    date: "August 2025",
+    status: "Available",
+    color: "emerald",
+    fileUrl: "/Proposal presentation.pptx",
+    openUrl: proposalPdf,
+    preview: "/finalP.png",
+    filePath: "src/slides/Proposal presentation.pdf"
+  }
 ];
 
 const Presentations = () => {
@@ -63,11 +102,12 @@ const Presentations = () => {
                   <div>
                     <p className="font-display font-semibold">{s.title}</p>
                     <p className="text-xs text-muted-foreground mt-0.5">{s.date}</p>
+                    <p className="text-[11px] text-muted-foreground/80 mt-1 break-all">{s.filePath}</p>
                   </div>
                   <div className="flex gap-2">
                     <Button variant="glass" size="sm" disabled={isComing} asChild>
-                      {s.fileUrl ? (
-                        <a href={s.fileUrl} target="_blank" rel="noopener noreferrer">
+                      {s.openUrl ? (
+                        <a href={s.openUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="h-3.5 w-3.5 mr-2" /> Open
                         </a>
                       ) : (
