@@ -18,17 +18,23 @@ const tabs = [
     body: (
       <>
         <p>
-          Existing research extensively covers ML-driven equity prediction in
-          mature markets (NYSE, NASDAQ, NSE). Studies leverage LSTM, ARIMA,
-          Transformer and ensemble approaches with sentiment overlays. However,
-          frontier markets — particularly the Colombo Stock Exchange — remain
-          underrepresented.
+          Existing research in stock market prediction primarily focuses on
+          isolated tasks such as price forecasting, sentiment analysis, or
+          financial risk modeling. Studies commonly apply statistical models
+          (ARIMA, GARCH) and machine learning approaches (LSTM, XGBoost,
+          Transformers) in developed markets.
         </p>
-        <ul className="mt-4 space-y-2 text-sm">
-          <li>• 40+ peer-reviewed papers reviewed across forecasting, risk and portfolio domains.</li>
-          <li>• Comparative analysis of statistical (ARIMA, GARCH) vs deep models (LSTM, GRU, Transformer).</li>
-          <li>• Survey of dividend prediction techniques and sector-aware models.</li>
+        <p className="pt-3">However, key limitations exist:</p>
+        <ul className="mt-2 space-y-2 text-sm">
+          <li>• Most approaches operate independently, lacking an integrated decision-support system.</li>
+          <li>• Financial news impact is often modeled assuming instant market reaction, ignoring delayed effects.</li>
+          <li>• Traditional risk metrics like Altman Z-score are static, not forward-looking.</li>
+          <li>• Dividend studies are largely explanatory, not predictive.</li>
+          <li>• Emerging markets like the Colombo Stock Exchange (CSE) remain significantly underexplored.</li>
         </ul>
+        <p className="pt-3 font-medium text-foreground">
+          This motivates the need for a unified, explainable, and market-specific AI framework.
+        </p>
       </>
     ),
   },
@@ -37,12 +43,31 @@ const tabs = [
     icon: Lightbulb,
     label: "Research Gap",
     body: (
-      <p>
-        Sri Lankan retail investors lack a unified, locally-trained decision
-        support tool. Existing platforms either provide raw data without
-        intelligence, or apply foreign-market models that fail to capture CSE
-        liquidity, regulatory cycles and dividend behaviour.
-      </p>
+      <>
+        <p>Retail investors in the Colombo Stock Exchange face:</p>
+        <ul className="mt-2 space-y-2 text-sm">
+          <li>• Fragmented tools for price, risk, and dividend analysis</li>
+          <li>• Lack of context-aware insights from financial news</li>
+          <li>• Absence of forward-looking financial health prediction</li>
+          <li>• Limited availability of interpretable AI-driven decision systems</li>
+        </ul>
+        <p className="pt-3">Existing solutions either:</p>
+        <ul className="mt-2 space-y-2 text-sm">
+          <li>• Provide raw data without intelligence, or</li>
+          <li>
+            • Apply foreign-trained models that fail to capture CSE-specific
+            characteristics such as:
+            <ul className="mt-2 ml-6 space-y-2">
+              <li>• Low liquidity</li>
+              <li>• Delayed information absorption</li>
+              <li>• Unique dividend behavior patterns</li>
+            </ul>
+          </li>
+        </ul>
+        <p className="pt-3 font-medium text-foreground">
+          There is no integrated, explainable AI platform tailored to CSE.
+        </p>
+      </>
     ),
   },
   {
@@ -50,11 +75,21 @@ const tabs = [
     icon: Target,
     label: "Research Problem",
     body: (
-      <p>
-        How can we design an integrated, ML-powered platform that delivers
-        accurate price predictions, dividend forecasts and personalised risk &
-        portfolio insights tailored specifically for the Colombo Stock Exchange?
-      </p>
+      <>
+        <p>
+          How can we design a multi-stage, explainable AI-driven platform that:
+        </p>
+        <ul className="mt-2 space-y-2 text-sm">
+          <li>• Accurately predicts short-term stock price movements</li>
+          <li>• Identifies and explains market-moving financial news</li>
+          <li>• Forecasts future financial stability (risk)</li>
+          <li>• Predicts dividend cut probability</li>
+          <li>• Provides interpretable and actionable portfolio insights</li>
+        </ul>
+        <p className="pt-3 font-medium text-foreground">
+          All tailored specifically for the Colombo Stock Exchange (CSE).
+        </p>
+      </>
     ),
   },
   {
@@ -62,13 +97,32 @@ const tabs = [
     icon: Crosshair,
     label: "Research Objectives",
     body: (
-      <ul className="space-y-3 text-sm">
-        <li>① Build a CSE-specific price-prediction engine with &gt; 85% directional accuracy.</li>
-        <li>② Design a dividend forecasting module aware of sector and corporate-action cycles.</li>
-        <li>③ Quantify portfolio risk using VaR, CVaR and stress-test simulations.</li>
-        <li>④ Recommend optimised portfolios via ML-assisted allocation strategies.</li>
-        <li>⑤ Deliver a polished, web-based interface accessible to retail investors.</li>
-      </ul>
+      <ol className="space-y-3 text-sm list-decimal list-inside">
+        <li>
+          Develop a <strong>two-stage news impact prediction system</strong> to
+          detect and classify market-moving financial news.
+        </li>
+        <li>
+          Build a <strong>forward-looking financial risk model</strong> to
+          predict future Altman Z-score trajectories.
+        </li>
+        <li>
+          Design a <strong>dividend cut prediction model</strong> using
+          interpretable machine learning.
+        </li>
+        <li>
+          Implement an <strong>ensemble-based price forecasting model</strong>
+          for short-term predictions.
+        </li>
+        <li>
+          Integrate all modules into a
+          <strong> unified, explainable decision-support platform (InvestWise)</strong>.
+        </li>
+        <li>
+          Provide <strong>interpretability using XAI techniques</strong> (SHAP,
+          feature contributions, retrieval-based explanations).
+        </li>
+      </ol>
     ),
   },
   {
@@ -77,11 +131,44 @@ const tabs = [
     label: "Methodology",
     body: (
       <ol className="space-y-3 text-sm list-decimal list-inside">
-        <li>Data acquisition from CSE feeds, broker APIs and macro indicators.</li>
-        <li>Preprocessing, feature engineering and sentiment ingestion.</li>
-        <li>Model training: LSTM / Transformer for prices, regression ensembles for dividends.</li>
-        <li>Risk &amp; portfolio engine using Monte-Carlo, mean-variance and RL agents.</li>
-        <li>Evaluation, deployment and continuous online learning.</li>
+        <li>
+          <strong>Data Acquisition</strong>
+          <p className="mt-1">
+            Collect stock prices, financial reports, and news data from CSE
+            sources and APIs.
+          </p>
+        </li>
+        <li>
+          <strong>Data Processing &amp; Feature Engineering</strong>
+          <p className="mt-1">
+            Clean, normalize, and transform data, including financial ratios,
+            technical indicators, and text embeddings.
+          </p>
+        </li>
+        <li>
+          <strong>Multi-Model Prediction Framework</strong>
+          <p className="mt-1">Apply specialized ML models for:</p>
+          <ul className="mt-2 ml-6 space-y-2 list-disc">
+            <li>News impact detection</li>
+            <li>Financial risk forecasting</li>
+            <li>Dividend prediction</li>
+            <li>Short-term price forecasting</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Explainability Layer</strong>
+          <p className="mt-1">
+            Integrate XAI techniques (e.g., SHAP, similarity retrieval) to
+            provide transparent and interpretable insights.
+          </p>
+        </li>
+        <li>
+          <strong>System Deployment</strong>
+          <p className="mt-1">
+            Deploy as a scalable web-based platform with real-time data updates
+            and integrated decision support.
+          </p>
+        </li>
       </ol>
     ),
   },
@@ -90,22 +177,34 @@ const tabs = [
     icon: Cpu,
     label: "Technologies",
     body: (
-      <div className="grid sm:grid-cols-2 gap-3">
-        {[
-          "React + TypeScript",
-          "Next.js / Vite",
-          "Tailwind CSS",
-          "Python · FastAPI",
-          "TensorFlow · PyTorch",
-          "Scikit-learn · XGBoost",
-          "PostgreSQL · TimescaleDB",
-          "CSE Data APIs",
-        ].map((t) => (
-          <div key={t} className="glass rounded-lg px-4 py-3 text-sm">
-            {t}
-          </div>
-        ))}
-      </div>
+      <>
+        <ul className="space-y-2 text-sm">
+          <li>
+            • <strong>Frontend:</strong> React, Next.js, Tailwind CSS
+          </li>
+          <li>
+            • <strong>Backend:</strong> Python, FastAPI
+          </li>
+          <li>
+            • <strong>Machine Learning:</strong>
+            <ul className="mt-2 ml-6 space-y-2 list-disc">
+              <li>XGBoost, LightGBM, CatBoost</li>
+              <li>SVR, Logistic Regression</li>
+              <li>TensorFlow / PyTorch (for embeddings)</li>
+            </ul>
+          </li>
+          <li>
+            • <strong>Data Processing:</strong> Scikit-learn, Pandas
+          </li>
+          <li>
+            • <strong>Database:</strong> PostgreSQL, TimescaleDB
+          </li>
+          <li>
+            • <strong>Other:</strong> FAISS (semantic search), SHAP (XAI), CSE
+            Data APIs
+          </li>
+        </ul>
+      </>
     ),
   },
 ];
