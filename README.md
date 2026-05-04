@@ -1,4 +1,4 @@
-**# CSE Insights — Research Project Website**
+**# InvestWise — Research Project Website**
 
 A research showcase website for an AI-powered ****Stock Prediction, Risk Assessment & Portfolio Management System**** targeting the Colombo Stock Exchange (CSE). Built as a final-year research project at the Sri Lanka Institute of Information Technology (SLIIT).
 
@@ -6,7 +6,7 @@ A research showcase website for an AI-powered ****Stock Prediction, Risk Assessm
 
 **## Project Overview**
 
-CSE Insights presents a four-component intelligent financial system:
+InvestWise presents a four-component intelligent financial system:
 
 | Component | Description |
 

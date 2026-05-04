@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { CalendarDays, CheckCircle2, Clock, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -58,14 +59,24 @@ const statusMap = {
 } as const;
 
 const Milestones = () => {
+  const timelineRef = useRef(null);
+  const timelineInView = useInView(timelineRef, { once: true, margin: "-100px" });
+
   return (
     <section id="milestones" className="pb-28 pt-4 relative">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-10">
           {/* Visual timeline */}
           <div className="lg:col-span-5">
-            <div className="relative pl-8">
-              <div className="absolute left-3 top-2 bottom-2 w-px bg-gradient-to-b from-gold via-slate-blue/40 to-transparent" />
+            <div className="relative pl-8" ref={timelineRef}>
+              {/* Animated line */}
+              <motion.div
+                className="absolute left-3 top-2 w-px bg-gradient-to-b from-gold via-slate-blue/40 to-transparent"
+                initial={{ height: 0 }}
+                animate={timelineInView ? { height: "calc(100% - 16px)" } : { height: 0 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              />
+
               {milestones.map((m, i) => {
                 const S = statusMap[m.status as keyof typeof statusMap];
                 return (
@@ -74,15 +85,26 @@ const Milestones = () => {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: i * 0.08 }}
-                    className="relative pb-8 last:pb-0"
+                    transition={{ duration: 0.45, delay: i * 0.1 }}
+                    className="relative pb-8 last:pb-0 group"
                   >
-                    <span className="absolute -left-[22px] top-1.5 h-3 w-3 rounded-full bg-gold shadow-glow" />
+                    {/* Timeline dot */}
+                    <motion.span
+                      className="absolute -left-[22px] top-1.5 h-3 w-3 rounded-full bg-gold"
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.35, delay: 0.3 + i * 0.1, type: "spring", stiffness: 300 }}
+                      style={{ boxShadow: "0 0 8px hsl(var(--gold) / 0.6)" }}
+                    />
+
                     <p className="text-xs text-muted-foreground flex items-center gap-1.5">
                       <CalendarDays className="h-3 w-3" />
                       {m.date}
                     </p>
-                    <p className="font-display font-semibold mt-1">{m.title}</p>
+                    <p className="font-display font-semibold mt-1 group-hover:text-gold transition-colors duration-300">
+                      {m.title}
+                    </p>
                     <Badge variant="outline" className={`mt-2 ${S.cls} text-[10px]`}>
                       <S.icon className="h-3 w-3 mr-1" />
                       {S.label} · {m.weight}
@@ -95,7 +117,13 @@ const Milestones = () => {
 
           {/* Accordion details */}
           <div className="lg:col-span-7">
-            <div className="glass-strong rounded-2xl p-2 md:p-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5 }}
+              className="glass-strong rounded-2xl p-2 md:p-4"
+            >
               <Accordion type="single" collapsible defaultValue="1" className="space-y-2">
                 {milestones.map((m) => {
                   const S = statusMap[m.status as keyof typeof statusMap];
@@ -103,7 +131,7 @@ const Milestones = () => {
                     <AccordionItem
                       key={m.id}
                       value={m.id}
-                      className="border border-border/40 rounded-xl px-4 bg-card/40 data-[state=open]:bg-card/80"
+                      className="border border-border/40 rounded-xl px-4 bg-card/40 data-[state=open]:bg-card/80 transition-colors"
                     >
                       <AccordionTrigger className="hover:no-underline py-4">
                         <div className="flex flex-1 items-center justify-between gap-3 text-left">
@@ -113,7 +141,7 @@ const Milestones = () => {
                               {m.date} · Weight {m.weight}
                             </p>
                           </div>
-                          <Badge variant="outline" className={`${S.cls} text-[10px] mr-2`}>
+                          <Badge variant="outline" className={`${S.cls} text-[10px] mr-2 shrink-0`}>
                             {S.label}
                           </Badge>
                         </div>
@@ -125,7 +153,7 @@ const Milestones = () => {
                   );
                 })}
               </Accordion>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

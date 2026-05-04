@@ -6,7 +6,7 @@ const AboutPage = () => (
     <PageHeader
       eyebrow="06 — About"
       title={<>Meet the <span className="text-gradient-emerald">team</span>.</>}
-      description="The researchers, supervisors and contributors behind CSE Insights."
+      description="The researchers, supervisors and contributors behind InvestWise."
     />
     <Team />
   </>

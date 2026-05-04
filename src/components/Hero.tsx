@@ -3,6 +3,14 @@ import { ArrowRight, BarChart3, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-finance.jpg";
+import AnimatedCounter from "./AnimatedCounter";
+
+const stats = [
+  { k: "4", l: "Components" },
+  { k: "300+", l: "CSE Tickers" },
+  { k: "5+", l: "ML Models" },
+  { k: "2025", l: "Final Year" },
+];
 
 const Hero = () => {
   return (
@@ -23,11 +31,31 @@ const Hero = () => {
       </div>
       <div className="absolute inset-0 grid-bg -z-10" />
 
-      {/* Ambient orbs — subtle, professional */}
+      {/* Ambient orbs */}
       <div className="absolute top-1/4 -left-24 w-80 h-80 rounded-full bg-gold/10 blur-3xl animate-pulse-glow" />
       <div className="absolute bottom-1/3 -right-24 w-96 h-96 rounded-full bg-accent/8 blur-3xl animate-pulse-glow" />
-      {/* Subtle top-center gold halo */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-64 rounded-full bg-gold/6 blur-3xl -z-10" />
+
+      {/* Floating particles */}
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-gold/20"
+          style={{
+            width: 4 + (i % 3) * 3,
+            height: 4 + (i % 3) * 3,
+            left: `${15 + i * 14}%`,
+            top: `${20 + (i % 3) * 18}%`,
+          }}
+          animate={{ y: [0, -18, 0], opacity: [0.2, 0.7, 0.2] }}
+          transition={{
+            duration: 3.5 + i * 0.7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.4,
+          }}
+        />
+      ))}
 
       <div className="container relative">
         <div className="max-w-4xl mx-auto text-center">
@@ -70,9 +98,10 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
-            <Button asChild variant="hero" size="lg">
+            <Button asChild variant="hero" size="lg" className="group">
               <Link to="/domain">
-                Explore Research <ArrowRight className="h-4 w-4" />
+                Explore Research{" "}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button asChild variant="glass" size="lg">
@@ -89,20 +118,22 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.55 }}
             className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
           >
-            {[
-              { k: "4", l: "Components" },
-              { k: "300+", l: "CSE Tickers" },
-              { k: "5+", l: "ML Models" },
-              { k: "2025", l: "Final Year" },
-            ].map((s) => (
-              <div key={s.l} className="stat-card animate-shimmer">
+            {stats.map((s, i) => (
+              <motion.div
+                key={s.l}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.65 + i * 0.1 }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="stat-card"
+              >
                 <p className="font-display text-3xl md:text-4xl text-gradient-gold font-bold">
-                  {s.k}
+                  <AnimatedCounter value={s.k} duration={1600} />
                 </p>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground mt-1">
                   {s.l}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>

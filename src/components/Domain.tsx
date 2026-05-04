@@ -218,10 +218,15 @@ const Domain = () => {
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-6">
           <aside className="lg:col-span-4 space-y-2">
-            {tabs.map((t) => (
-              <button
+            {tabs.map((t, i) => (
+              <motion.button
                 key={t.id}
                 onClick={() => setActive(t.id)}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                whileHover={{ x: active !== t.id ? 4 : 0, transition: { duration: 0.18 } }}
                 className={cn(
                   "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl text-left transition-all duration-300 border",
                   active === t.id
@@ -229,25 +234,36 @@ const Domain = () => {
                     : "glass border-transparent hover:border-white/10 hover:bg-card/60"
                 )}
               >
-                <span
+                <motion.span
+                  animate={{
+                    background: active === t.id
+                      ? "var(--gradient-gold)"
+                      : undefined,
+                  }}
                   className={cn(
-                    "h-9 w-9 rounded-lg grid place-items-center shrink-0 transition-colors",
+                    "h-9 w-9 rounded-lg grid place-items-center shrink-0 transition-colors duration-300",
                     active === t.id
                       ? "bg-gradient-gold text-primary-foreground"
                       : "bg-secondary text-muted-foreground"
                   )}
                 >
                   <t.icon className="h-4 w-4" />
-                </span>
+                </motion.span>
                 <span
                   className={cn(
-                    "font-medium",
+                    "font-medium transition-colors duration-300",
                     active === t.id ? "text-foreground" : "text-muted-foreground"
                   )}
                 >
                   {t.label}
                 </span>
-              </button>
+                {active === t.id && (
+                  <motion.span
+                    layoutId="tab-indicator"
+                    className="ml-auto h-1.5 w-1.5 rounded-full bg-gold"
+                  />
+                )}
+              </motion.button>
             ))}
           </aside>
 
@@ -256,15 +272,20 @@ const Domain = () => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.id}
-                  initial={{ opacity: 0, y: 12 }}
+                  initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.35 }}
+                  exit={{ opacity: 0, y: -14 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">
                     {current.label}
                   </h3>
-                  <div className="h-px w-16 bg-gradient-gold mb-6" />
+                  <motion.div
+                    className="h-px w-16 bg-gradient-to-r from-gold to-transparent mb-6"
+                    initial={{ scaleX: 0, originX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                  />
                   <div className="text-muted-foreground leading-relaxed space-y-3">
                     {current.body}
                   </div>
