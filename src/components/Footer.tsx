@@ -10,7 +10,7 @@ const Footer = () => {
           </span>
           <p className="text-sm">
             <span className="font-display font-semibold">CSE Insights</span>
-            <span className="text-muted-foreground"> — Final Year Research © 2025</span>
+            <span className="text-muted-foreground"> — Final Year Research © 2026</span>
           </p>
         </div>
         <p className="text-xs text-muted-foreground">
