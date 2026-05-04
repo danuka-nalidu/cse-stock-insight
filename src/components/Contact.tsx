@@ -45,20 +45,20 @@ const Contact = () => {
             className="lg:col-span-5 space-y-4"
           >
             {[
-              { icon: Mail, label: "Group Email", value: "cse-research@my.sliit.lk", href: "mailto:cse-research@my.sliit.lk" },
-              { icon: Phone, label: "Phone", value: "+94 77 123 4567", href: "tel:+94771234567" },
+              { icon: Mail, label: "Group Email", value: "investwisefinance@gmail.com", href: "mailto:investwisefinance@gmail.com" },
+              { icon: Phone, label: "Phone", value: "+94 94 701 6158", href: "tel:+94 94 701 6158" },
               { icon: MapPin, label: "Location", value: "SLIIT, Malabe, Sri Lanka" },
             ].map((it) => (
               <a
                 key={it.label}
                 href={it.href || "#"}
-                className="glass-strong rounded-2xl p-5 flex items-center gap-4 group hover:border-emerald2/30 transition-all"
+                className="glass-strong rounded-2xl p-5 flex items-center gap-4 group hover:border-gold/30 transition-all"
               >
-                <div className="h-12 w-12 rounded-xl bg-gradient-emerald grid place-items-center shadow-glow group-hover:scale-110 transition-transform">
+                <div className="h-12 w-12 rounded-xl bg-gradient-gold grid place-items-center shadow-glow group-hover:scale-110 transition-transform">
                   <it.icon className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <div>
-                  <p className="text-[11px] uppercase tracking-wider text-emerald2">
+                  <p className="text-[11px] uppercase tracking-wider text-gold">
                     {it.label}
                   </p>
                   <p className="font-medium mt-0.5">{it.value}</p>

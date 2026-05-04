@@ -40,7 +40,7 @@ const Navbar = () => {
           )}
         >
           <Link to="/" className="flex items-center gap-2 group">
-            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-emerald shadow-glow">
+            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-gold shadow-glow">
               <TrendingUp className="h-5 w-5 text-primary-foreground" />
             </span>
             <div className="leading-tight">
@@ -71,7 +71,7 @@ const Navbar = () => {
                       {l.label}
                       <span
                         className={cn(
-                          "absolute left-3 right-3 -bottom-0.5 h-px bg-gradient-emerald transition-transform origin-left",
+                          "absolute left-3 right-3 -bottom-0.5 h-px bg-gradient-gold transition-transform origin-left",
                           isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                         )}
                       />

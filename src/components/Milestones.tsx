@@ -52,8 +52,8 @@ const milestones = [
 ];
 
 const statusMap = {
-  completed: { label: "Completed", icon: CheckCircle2, cls: "bg-emerald2/15 text-emerald2 border-emerald2/30" },
-  "in-progress": { label: "In Progress", icon: Clock, cls: "bg-cyan2/15 text-cyan2 border-cyan2/30" },
+  completed: { label: "Completed", icon: CheckCircle2, cls: "bg-gold/12 text-gold border-gold/30" },
+  "in-progress": { label: "In Progress", icon: Clock, cls: "bg-slate-blue/12 text-slate-blue border-slate-blue/30" },
   upcoming: { label: "Upcoming", icon: Award, cls: "bg-muted text-muted-foreground border-border" },
 } as const;
 
@@ -65,7 +65,7 @@ const Milestones = () => {
           {/* Visual timeline */}
           <div className="lg:col-span-5">
             <div className="relative pl-8">
-              <div className="absolute left-3 top-2 bottom-2 w-px bg-gradient-to-b from-emerald2 via-cyan2/40 to-transparent" />
+              <div className="absolute left-3 top-2 bottom-2 w-px bg-gradient-to-b from-gold via-slate-blue/40 to-transparent" />
               {milestones.map((m, i) => {
                 const S = statusMap[m.status as keyof typeof statusMap];
                 return (
@@ -77,7 +77,7 @@ const Milestones = () => {
                     transition={{ duration: 0.45, delay: i * 0.08 }}
                     className="relative pb-8 last:pb-0"
                   >
-                    <span className="absolute -left-[22px] top-1.5 h-3 w-3 rounded-full bg-emerald2 shadow-glow" />
+                    <span className="absolute -left-[22px] top-1.5 h-3 w-3 rounded-full bg-gold shadow-glow" />
                     <p className="text-xs text-muted-foreground flex items-center gap-1.5">
                       <CalendarDays className="h-3 w-3" />
                       {m.date}

@@ -63,24 +63,34 @@ export default {
           deep: "hsl(var(--navy-deep))",
         },
         slate2: "hsl(var(--slate-elev))",
-        emerald2: {
-          DEFAULT: "hsl(var(--emerald))",
-          soft: "hsl(var(--emerald-soft))",
+        // Gold replaces emerald as primary brand accent
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          soft: "hsl(var(--gold-soft))",
         },
-        cyan2: "hsl(var(--cyan))",
+        // Kept for backward compat — aliases to gold
+        emerald2: {
+          DEFAULT: "hsl(var(--gold))",
+          soft: "hsl(var(--gold-soft))",
+        },
+        // Slate-blue replaces cyan as secondary accent
+        "slate-blue": "hsl(var(--slate-blue))",
+        cyan2: "hsl(var(--slate-blue))",
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
-        'gradient-emerald': 'var(--gradient-emerald)',
+        'gradient-emerald': 'var(--gradient-gold)',
+        'gradient-gold': 'var(--gradient-gold)',
         'gradient-card': 'var(--gradient-card)',
       },
       boxShadow: {
         glow: 'var(--shadow-glow)',
         elegant: 'var(--shadow-elegant)',
         card: 'var(--shadow-card)',
+        blue: 'var(--shadow-blue)',
       },
       fontFamily: {
-        display: ['Space Grotesk', 'Inter', 'sans-serif'],
+        display: ['DM Sans', 'Inter', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {

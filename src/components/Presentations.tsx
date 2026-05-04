@@ -14,7 +14,7 @@ const slides = [
     color: "emerald",
     fileUrl: "/Proposal presentation.pptx",
     openUrl: proposalPdf,
-    preview: "/preview-proposal.png",
+    preview: "/PP.png",
     filePath: "src/slides/Proposal presentation.pdf"
   },
   {
@@ -24,7 +24,7 @@ const slides = [
     color: "emerald",
     fileUrl: "/Progress presentation 1.pptx",
     openUrl: "",
-    preview: "/preview-progress-1.png",
+    preview: "/PP1.png",
     filePath: "Not uploaded yet"
   },
   {
@@ -34,7 +34,7 @@ const slides = [
     color: "cyan",
     fileUrl: "/Progress presentaion 2.pdf",
     openUrl: progress2Pptx,
-    preview: "/preview-progress-2.png",
+    preview: "/pp2.png",
     filePath: "src/slides/Progress presentaion 2.pdf"
   },
   {
@@ -44,7 +44,7 @@ const slides = [
     color: "emerald",
     fileUrl: "/Proposal presentation.pptx",
     openUrl: proposalPdf,
-    preview: "/finalP.png",
+    preview: "/final.png",
     filePath: "src/slides/Proposal presentation.pdf"
   }
 ];
@@ -79,7 +79,7 @@ const Presentations = () => {
                         </div>
                       ) : (
                         <div className="text-center px-6">
-                          <Presentation className="h-12 w-12 text-emerald2 mx-auto animate-float" />
+                          <Presentation className="h-12 w-12 text-gold mx-auto animate-float" />
                           <p className="font-display text-xl mt-3 text-foreground/90">{s.title}</p>
                         </div>
                       )}
@@ -91,7 +91,7 @@ const Presentations = () => {
                       className={
                         isComing
                           ? "bg-muted text-muted-foreground border-border text-[10px]"
-                          : "bg-emerald2/15 text-emerald2 border-emerald2/30 text-[10px]"
+                          : "bg-gold/12 text-gold border-gold/30 text-[10px]"
                       }
                     >
                       {s.status}

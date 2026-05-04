@@ -225,7 +225,7 @@ const Domain = () => {
                 className={cn(
                   "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl text-left transition-all duration-300 border",
                   active === t.id
-                    ? "glass-strong border-emerald2/40 shadow-glow"
+                    ? "glass-strong border-gold/40 shadow-glow"
                     : "glass border-transparent hover:border-white/10 hover:bg-card/60"
                 )}
               >
@@ -233,7 +233,7 @@ const Domain = () => {
                   className={cn(
                     "h-9 w-9 rounded-lg grid place-items-center shrink-0 transition-colors",
                     active === t.id
-                      ? "bg-gradient-emerald text-primary-foreground"
+                      ? "bg-gradient-gold text-primary-foreground"
                       : "bg-secondary text-muted-foreground"
                   )}
                 >
@@ -264,7 +264,7 @@ const Domain = () => {
                   <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">
                     {current.label}
                   </h3>
-                  <div className="h-px w-16 bg-gradient-emerald mb-6" />
+                  <div className="h-px w-16 bg-gradient-gold mb-6" />
                   <div className="text-muted-foreground leading-relaxed space-y-3">
                     {current.body}
                   </div>

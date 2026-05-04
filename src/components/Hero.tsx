@@ -15,17 +15,19 @@ const Hero = () => {
         <img
           src={heroImg}
           alt="Financial chart background"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-30"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/75 to-background" />
       </div>
       <div className="absolute inset-0 grid-bg -z-10" />
 
-      {/* Floating orbs */}
-      <div className="absolute top-1/4 -left-20 w-72 h-72 rounded-full bg-emerald2/20 blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-1/4 -right-20 w-80 h-80 rounded-full bg-accent/15 blur-3xl animate-pulse-glow" />
+      {/* Ambient orbs — subtle, professional */}
+      <div className="absolute top-1/4 -left-24 w-80 h-80 rounded-full bg-gold/10 blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-1/3 -right-24 w-96 h-96 rounded-full bg-accent/8 blur-3xl animate-pulse-glow" />
+      {/* Subtle top-center gold halo */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-64 rounded-full bg-gold/6 blur-3xl -z-10" />
 
       <div className="container relative">
         <div className="max-w-4xl mx-auto text-center">
@@ -33,9 +35,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-8 border border-gold/20"
           >
-            <Sparkles className="h-3.5 w-3.5 text-emerald2" />
+            <Sparkles className="h-3.5 w-3.5 text-gold" />
             <span className="text-xs font-medium tracking-wide text-muted-foreground">
               SLIIT · Final Year Research Project · 2025
             </span>
@@ -49,7 +51,7 @@ const Hero = () => {
           >
             <span className="text-gradient">Predict. Manage.</span>
             <br />
-            <span className="text-gradient-emerald">Outperform the CSE.</span>
+            <span className="text-gradient-gold">Outperform the CSE.</span>
           </motion.h1>
 
           <motion.p
@@ -93,8 +95,8 @@ const Hero = () => {
               { k: "5+", l: "ML Models" },
               { k: "2025", l: "Final Year" },
             ].map((s) => (
-              <div key={s.l} className="glass rounded-xl p-5 text-left">
-                <p className="font-display text-3xl md:text-4xl text-gradient-emerald font-bold">
+              <div key={s.l} className="stat-card animate-shimmer">
+                <p className="font-display text-3xl md:text-4xl text-gradient-gold font-bold">
                   {s.k}
                 </p>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground mt-1">

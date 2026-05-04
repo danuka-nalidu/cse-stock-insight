@@ -36,12 +36,12 @@ const Abstract = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5"
           >
-            <p className="text-xs uppercase tracking-[0.3em] text-emerald2 mb-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">
               01 — Abstract
             </p>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               A unified intelligence layer for{" "}
-              <span className="text-gradient-emerald">Sri Lankan</span> capital
+              <span className="text-gradient-gold">Sri Lankan</span> capital
               markets.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
@@ -66,7 +66,7 @@ const Abstract = () => {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="glass-strong rounded-2xl p-6 group hover:-translate-y-1 transition-transform duration-500"
               >
-                <div className="h-11 w-11 rounded-xl bg-gradient-emerald grid place-items-center shadow-glow group-hover:scale-110 transition-transform">
+                <div className="h-11 w-11 rounded-xl bg-gradient-gold grid place-items-center shadow-glow group-hover:scale-110 transition-transform">
                   <p.icon className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-semibold">
