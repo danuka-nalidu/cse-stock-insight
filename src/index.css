@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* CSE Stock Insight — Professional Financial Platform Design System
-   Deep Navy · Warm Gold · Institutional · Premium Dark Mode */
+   Deep Navy · Emerald Green · Institutional · Premium Dark Mode */
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +9,7 @@
 
 @layer base {
   :root {
-    /* ── Core palette: deep navy with warm gold accents ── */
+    /* ── Core palette: deep navy with emerald green accents ── */
     --background: 222 35% 7%;
     --foreground: 215 25% 93%;
 
@@ -19,10 +19,10 @@
     --popover: 222 35% 8%;
     --popover-foreground: 215 25% 93%;
 
-    /* Primary: warm gold/amber */
-    --primary: 43 92% 55%;
+    /* Primary: emerald green */
+    --primary: 140 65% 55%;
     --primary-foreground: 222 35% 8%;
-    --primary-glow: 43 100% 68%;
+    --primary-glow: 140 75% 68%;
 
     --secondary: 220 25% 16%;
     --secondary-foreground: 215 25% 93%;
@@ -39,7 +39,7 @@
 
     --border: 220 20% 18%;
     --input: 220 25% 14%;
-    --ring: 43 92% 55%;
+    --ring: 140 65% 55%;
 
     --radius: 0.85rem;
 
@@ -47,25 +47,25 @@
     --navy-deep: 222 40% 4%;
     --navy: 222 35% 8%;
     --slate-elev: 220 28% 13%;
-    --gold: 43 92% 55%;
-    --gold-soft: 43 95% 72%;
+    --gold: 140 65% 55%;
+    --gold-soft: 140 70% 72%;
     --slate-blue: 220 60% 55%;
 
     /* ── Gradients ── */
-    --gradient-hero: radial-gradient(ellipse 80% 55% at 50% -5%, hsl(43 92% 55% / 0.12), transparent 60%),
+    --gradient-hero: radial-gradient(ellipse 80% 55% at 50% -5%, hsl(140 65% 55% / 0.12), transparent 60%),
                      radial-gradient(ellipse 55% 45% at 92% 25%, hsl(220 60% 55% / 0.09), transparent 60%),
                      linear-gradient(180deg, hsl(222 40% 4%), hsl(222 35% 7%));
 
-    --gradient-gold: linear-gradient(135deg, hsl(43 92% 50%), hsl(38 90% 62%));
-    --gradient-gold-subtle: linear-gradient(135deg, hsl(43 92% 55% / 0.15), hsl(38 85% 60% / 0.08));
+    --gradient-gold: linear-gradient(135deg, hsl(140 65% 50%), hsl(135 68% 62%));
+    --gradient-gold-subtle: linear-gradient(135deg, hsl(140 65% 55% / 0.15), hsl(135 65% 60% / 0.08));
     --gradient-card: linear-gradient(160deg, hsl(222 30% 12% / 0.90), hsl(222 35% 8% / 0.90));
-    --gradient-text: linear-gradient(135deg, hsl(215 25% 96%), hsl(43 92% 72%));
-    --gradient-text-gold: linear-gradient(135deg, hsl(43 92% 62%), hsl(38 88% 75%));
+    --gradient-text: linear-gradient(135deg, hsl(215 25% 96%), hsl(140 65% 72%));
+    --gradient-text-gold: linear-gradient(135deg, hsl(140 65% 62%), hsl(135 68% 75%));
 
     /* ── Shadows & glows ── */
-    --shadow-glow: 0 0 32px hsl(43 92% 55% / 0.28);
+    --shadow-glow: 0 0 32px hsl(140 65% 55% / 0.28);
     --shadow-card: 0 20px 50px -20px hsl(222 40% 3% / 0.85);
-    --shadow-elegant: 0 30px 80px -25px hsl(43 92% 55% / 0.20);
+    --shadow-elegant: 0 30px 80px -25px hsl(140 65% 55% / 0.20);
     --shadow-blue: 0 0 32px hsl(220 60% 55% / 0.22);
 
     /* ── Motion ── */
@@ -74,12 +74,12 @@
     /* ── Sidebar ── */
     --sidebar-background: 222 35% 7%;
     --sidebar-foreground: 215 25% 93%;
-    --sidebar-primary: 43 92% 55%;
+    --sidebar-primary: 140 65% 55%;
     --sidebar-primary-foreground: 222 35% 8%;
     --sidebar-accent: 220 25% 14%;
     --sidebar-accent-foreground: 215 25% 93%;
     --sidebar-border: 220 20% 18%;
-    --sidebar-ring: 43 92% 55%;
+    --sidebar-ring: 140 65% 55%;
   }
 }
 
